@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1651417497 source:f:\semestr 6\ochrona danych\rozszerzony algorytm euklidesa (zaj9)\invmod\main.cpp
+	<iostream>
+	<cmath>
+	<vector>
+	<random>
+	<cstdio>
+	<string>
+	<windows.h>
+
