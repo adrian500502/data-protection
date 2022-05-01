@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1650454007 source:c:\roboczy\diffiehellman\main.cpp
+	<iostream>
+	<math.h>
+
