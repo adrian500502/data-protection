@@ -26,9 +26,7 @@ long long powmod(long long a, long long b, long long c)
     while (b > 0)
     {
         if (b % 2 == 1)
-        {
             outcome = (outcome * y) % c;
-        }
 
         y = (y * y) % c;
         b = b / 2;
@@ -89,7 +87,7 @@ long long invmod(long long A, long long B)
     else
         return EXIT_FAILURE;
 }
-void RSA(const string &fileName)
+void RSA(const string& fileName)
 {
     long long p, q;
     while (true)
@@ -123,10 +121,22 @@ void RSA(const string &fileName)
 
     // wczytywanie wiadomosci z pliku
     ifstream input;
-    input.open(fileName);
-    string str;
-    while (!input.eof())
-        getline(input, str);
+    string str, tmp;
+    bool first = false;
+    input.open(fileName, std::ios::in);
+    if (input.good())
+    {
+        while (!input.eof())
+        {
+            if (first)
+                str += "\n";
+            if (!first)
+                first = true;
+            tmp.clear();
+            getline(input, tmp);
+            str += tmp;
+        }
+    }
     input.close();
     cout << "\nMessage: " << str << '\n';
 
@@ -167,7 +177,7 @@ void RSA(const string &fileName)
 
 int main()
 {
-    RSA("example.txt");
+    RSA("input.txt");
 
     system("PAUSE");
     return EXIT_SUCCESS;
